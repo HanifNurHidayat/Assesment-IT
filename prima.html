@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    function isPrime(n){
+ 
+        if (n<2) {
+            return false ;
+        }else if (n==2){
+            return false ;
+        }else{
+            for(var i=2 ; i <= Math.sqrt(n) ; i++){
+                if ( n % i == 0){
+                    return false
+                }
+            }
+            return true ;
+        }
+    }
+    function cekPrime(n){
+        if (n>1){
+            if (isPrime(n)){
+                document.getElementById('txt').value=" bilangan Prima";
+ 
+            }else{
+                document.getElementById('txt').value=" tidak bilangan Prima";
+            }
+        }else{
+                document.getElementById('txt').value="-";
+        }
+    }
+</script>
+ 
+<body>
+    <form id="form1" name="prima">
+        <p>Pengecekan Bilangan Prima</p>
+ 
+        <p>Input Nilai
+          <input type="text" id="nilai" name="nilai" onKeyUp="cekPrime(parseFloat(document.prima.nilai.value))">
+      </p>
+        <p>Keterangan : <input type="text" id="txt" onFocus="blur()">
+    </form>
+</body>
